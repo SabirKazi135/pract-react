@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+
+
+
+function Garage() {
+  return (
+    <>
+      <h1>Who Lives in my Garage</h1>
+      <Car color="red" />
+    </>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<Garage />);
