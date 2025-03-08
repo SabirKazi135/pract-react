@@ -1,7 +1,8 @@
+import Header from "./Header.jsx";
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Header />
     </>
   );
 }

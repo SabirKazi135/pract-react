@@ -1,4 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom/client";
+import App from "./App.jsx";
+import "./App.css";
 const root = ReactDom.createRoot(document.getElementById("root"));
-root.render(<h1 className="header">hello</h1>);
+root.render(<App />);
