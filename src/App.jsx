@@ -1,11 +1,14 @@
-import Button from "./Button";
-import Greeting from "./Greeting";
+import Fruit from "./Fruit";
 
+const array = ["Apple", "Banana", "Orange"];
 function App() {
   return (
     <>
-      <Greeting name="Sabir" />
-      <Button />
+      <ul>
+        {array.map((frt, ind) => (
+          <Fruit key={ind} num={ind + 1} name={frt} />
+        ))}
+      </ul>
     </>
   );
 }
