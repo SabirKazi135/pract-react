@@ -2,14 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
 
-let isLoggedIn = true;
-let massage = "";
-
-if (isLoggedIn) {
-  massage = "Wlcome back";
-} else {
-  massage = "Please log in";
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(massage);
+root.render(<Car />);
