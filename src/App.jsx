@@ -1,13 +1,12 @@
-import ShowName from "./ShowName";
+import Product from "./ShowName";
 
 function App() {
   return (
     <>
-      <ShowName name="Sabir" age={20} />
-      <ShowName name="Taif" age={21} />
-      <ShowName name="Raees" age={40} />
-      <ShowName name="Siddiq" age={50} />
-      <ShowName name="Kazi" age={60} />
+      <Product stock={true} name="product1" price={100} />
+      <Product stock={false} name="product2" price={150} />
+      <Product stock={true} name="product3" price={200} />
+      <Product stock={true} name="product4" price={300} />
     </>
   );
 }
