@@ -1,7 +1,10 @@
+import Car from "./Car";
+
+const carName = "Kazi";
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Car brand={carName} />
     </>
   );
 }
