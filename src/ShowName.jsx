@@ -1,13 +1,16 @@
 function Football() {
-  const shoot = () => {
-    const para = document.getElementById("main");
-    para.innerText = "Button Clicked";
-  };
+  function handle(event) {
+    event.preventDefault();
+    console.log("Form summiited");
+    document.getElementById("gh").value = "";
+  }
 
   return (
     <>
-      <h2 id="main">Not clicked</h2>
-      <button onClick={shoot}>Click me</button>
+      <form action="" onSubmit={handle}>
+        <input type="text" id="gh" />
+        <input type="submit" />
+      </form>
     </>
   );
 }
