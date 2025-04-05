@@ -1,9 +1,9 @@
 function Football() {
-  const shoot = (a) => {
-    alert(a);
+  const shoot = () => {
+    alert("Button clicked");
   };
 
-  return <button onClick={() => shoot("Sabir Goal")}>Click Me</button>;
+  return <button onClick={shoot}>Click Me</button>;
 }
 
 export default Football;
