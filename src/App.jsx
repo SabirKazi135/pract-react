@@ -1,10 +1,13 @@
-import Car from "./Car";
+import ShowName from "./ShowName";
 
-const carName = "Kazi";
 function App() {
   return (
     <>
-      <Car brand={carName} />
+      <ShowName name="Sabir" />
+      <ShowName name="Taif" />
+      <ShowName name="Raees" />
+      <ShowName name="Siddiq" />
+      <ShowName name="Kazi" />
     </>
   );
 }
