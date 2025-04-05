@@ -1,9 +1,15 @@
 function Football() {
   const shoot = () => {
-    alert("Button clicked");
+    const para = document.getElementById("main");
+    para.innerText = "Button Clicked";
   };
 
-  return <button onClick={shoot}>Click Me</button>;
+  return (
+    <>
+      <h2 id="main">Not clicked</h2>
+      <button onClick={shoot}>Click me</button>
+    </>
+  );
 }
 
 export default Football;
