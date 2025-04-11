@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
 function List(props) {
-  return <li>I am fruit {props.fruit}</li>;
+  return <li>I am fruit {props.fruit},</li>;
 }
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <ul>
       {Fruits.map((fruit) => {
-        return <List fruit={fruit} />;
+        return <List key={fruit} fruit={fruit} />;
       })}
     </ul>
   );
