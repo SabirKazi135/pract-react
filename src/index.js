@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import "./App.css";
 function Car(props) {
   return <li>I am a {props.brand}</li>;
 }
