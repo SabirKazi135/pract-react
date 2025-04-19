@@ -5,17 +5,11 @@ import "./App.css";
 
 function Button() {
   const [textState, setState] = useState("visible");
-  const [buttonText, setText] = useState("hide");
   function change() {
     if (textState === "hidden") {
       setState("visible");
     } else {
       setState("hidden");
-    }
-    if (buttonText === "hide") {
-      setText("show");
-    } else {
-      setText("hide");
     }
   }
   return (
@@ -26,7 +20,9 @@ function Button() {
         voluptas commodi consequuntur sit distinctio eius enim laborum nisi
         nihil dolore.
       </p>
-      <button onClick={change}>{buttonText}</button>
+      <button onClick={change}>
+        {textState == "visible" ? "hide" : "show"}
+      </button>
     </>
   );
 }
