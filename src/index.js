@@ -12,7 +12,7 @@ function MyComponent() {
     setAge(age + 2);
   }
   function employee() {
-    setIsEmployed(true);
+    setIsEmployed(!isEmployed);
   }
   return (
     <>
