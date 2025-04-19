@@ -3,23 +3,18 @@ import ReactDOM from "react-dom/client";
 import { useState } from "react";
 import "./App.css";
 
-function MyComponent() {
-  const [name, setName] = useState("guest");
-  const [age, setAge] = useState(18);
-  const [isEmployed, setIsEmployed] = useState(false);
 
-  function updateAge() {
-    setAge(age + 2);
-  }
-  function employee() {
-    setIsEmployed(!isEmployed);
-  }
+
+function Clock() {
   return (
     <>
-      <p>Age: {age}</p>
-      <button onClick={updateAge}>Update Age</button>
-      <p>Employee: {isEmployed ? "True" : "False"}</p>
-      <button onClick={employee}>Update employee</button>
+      <div>
+        <h1>Counter</h1>
+        <p id="p">0</p>
+        <button onClick={decreament}>-</button>
+        <button onClick={reset}>Reset</button>
+        <button onClick={increament}>+</button>
+      </div>
     </>
   );
 }
@@ -27,7 +22,7 @@ function MyComponent() {
 function App() {
   return (
     <>
-      <MyComponent />
+      <Clock />
     </>
   );
 }
