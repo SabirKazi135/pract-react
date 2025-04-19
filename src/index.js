@@ -4,25 +4,23 @@ import { useState } from "react";
 import "./App.css";
 
 function Button() {
-  const [textState, setState] = useState("visible");
+  const [textBack, setBack] = useState("red");
   function change() {
-    if (textState === "hidden") {
-      setState("visible");
+    if (textBack === "red") {
+      setBack("green");
     } else {
-      setState("hidden");
+      setBack("red");
     }
   }
   return (
     <>
-      <p style={{ visibility: textState }}>
+      <p style={{ background: textBack }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut perspiciatis
         nulla eligendi, quae, reiciendis veniam quod quam, labore placeat
         voluptas commodi consequuntur sit distinctio eius enim laborum nisi
         nihil dolore.
       </p>
-      <button onClick={change}>
-        {textState == "visible" ? "hide" : "show"}
-      </button>
+      <button onClick={change}>change</button>
     </>
   );
 }
