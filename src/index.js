@@ -3,19 +3,23 @@ import ReactDOM from "react-dom/client";
 import { useState } from "react";
 import "./App.css";
 
-
-function decreament() {
-  
-  const [count, setCount] = useState();
-  setCount(number);
-}
-
 function Clock() {
+  const p = document.getElementById("p");
+  const [count, setCount] = useState(0);
+  function decreament() {
+    setCount(count - 1);
+  }
+  function increament() {
+    setCount(count + 1);
+  }
+  function reset() {
+    setCount(0);
+  }
   return (
     <>
       <div>
         <h1>Counter</h1>
-        <p id="p">0</p>
+        <p id="p">{count}</p>
         <button onClick={decreament}>-</button>
         <button onClick={reset}>Reset</button>
         <button onClick={increament}>+</button>
