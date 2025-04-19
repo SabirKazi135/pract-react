@@ -4,6 +4,11 @@ import { useState } from "react";
 import "./App.css";
 
 
+function decreament() {
+  
+  const [count, setCount] = useState();
+  setCount(number);
+}
 
 function Clock() {
   return (
