@@ -7,12 +7,12 @@ function Button() {
   const [textState, setState] = useState("hidden");
   const [buttonText, setText] = useState("hide");
   function change() {
-    if (textState == "hidden") {
+    if (textState === "hidden") {
       setState("visible");
     } else {
       setState("hidden");
     }
-    if (buttonText == "hide") {
+    if (buttonText === "hide") {
       setText("show");
     } else {
       setText("hide");
