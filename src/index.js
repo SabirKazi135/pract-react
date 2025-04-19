@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./App.css";
 
 function Button() {
-  const [textState, setState] = useState("hidden");
+  const [textState, setState] = useState("visible");
   const [buttonText, setText] = useState("hide");
   function change() {
     if (textState === "hidden") {
@@ -20,7 +20,7 @@ function Button() {
   }
   return (
     <>
-      <p style={{ visiblity: textState }}>
+      <p style={{ visibility: textState }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut perspiciatis
         nulla eligendi, quae, reiciendis veniam quod quam, labore placeat
         voluptas commodi consequuntur sit distinctio eius enim laborum nisi
