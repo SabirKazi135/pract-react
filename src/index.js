@@ -1,18 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
-function List(props) {
-  return <li>I am fruit {props.fruit},</li>;
+
+function Button() {
+  const handleClick = (e) => {
+    e.target.textContent = "ouch";
+  };
+  return (
+    <>
+      <button onClick={(e) => handleClick(e)}>Click Me</button>
+    </>
+  );
 }
 
 function App() {
-  const Fruits = ["Apple", "Banana", "Guava"];
   return (
-    <ul>
-      {Fruits.map((fruit) => {
-        return <List key={fruit} fruit={fruit} />;
-      })}
-    </ul>
+    <>
+      <Button />
+    </>
   );
 }
 
