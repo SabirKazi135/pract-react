@@ -4,28 +4,16 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [car, setCar] = useState({ year: 2024, make: "ford", model: "Mustag" });
-  function handleYearChange(e) {
-    setCar((c) => ({ ...c, year: e.target.value }));
+  const [foods ,setFoods ] = useState(["Apple", "Orange", "Banana"]);
+
+  function addFood(e) {
+    
   }
-  function handleMakeChange(e) {
-    setCar((c) => ({ ...c, make: e.target.value }));
-  }
-  function handleModelChange(e) {
-    setCar((c) => ({ ...c, model: e.target.value }));
+
+  function removeFood(e) {
+    
   }
   return (
-    <>
-      <p>
-        Your fav car is: {car.year} {car.make} {car.model}
-      </p>
-      <input type="number" value={car.year} onChange={handleYearChange} />
-      <br />
-      <input type="text" value={car.make} onChange={handleMakeChange} />
-      <br />
-      <input type="text" value={car.model} onChange={handleModelChange} />
-      <br />
-    </>
   );
 }
 
