@@ -17,7 +17,7 @@ function App() {
     <>
       <input type="text" value={name} onChange={handleChange} />
       <p>Name: {name}</p>
-      <input type="number" value={name} onChange={handleChange} />
+      <input type="number" value={quantity} onChange={handleQuantityChange} />
       <p>Number: {quantity}</p>
     </>
   );
