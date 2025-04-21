@@ -22,7 +22,7 @@ function App() {
         <input
           onChange={handleChange}
           type="text"
-          name="usename"
+          name="username"
           value={input.username || ""}
         />
       </label>
