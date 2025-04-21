@@ -12,7 +12,11 @@ function App() {
     setCount((c) => c + 1);
   }
 
-  function decrement() {}
+  function decrement() {
+    setCount((c) => c - 1);
+    setCount((c) => c - 1);
+    setCount((c) => c - 1);
+  }
 
   function reset() {
     setCount(0);
