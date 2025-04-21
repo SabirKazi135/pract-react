@@ -27,7 +27,7 @@ function App() {
         name=""
         id=""
         value={comment}
-        onChange={handleChange}
+        onChange={handleCommentChange}
       ></textarea>
       <p>comment: {comment}</p>
     </>
