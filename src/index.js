@@ -1,42 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [input, setInput] = useState({});
+  const [name, setName] = useState("Guest");
+  const [quantity, setQuantity] = useState(10);
 
-  function handleChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInput((values) => ({ ...values, [name]: value }));
+  function handleQuantityChange(event) {
+    setQuantity(event.target.value);
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(input);
+  function handleChange(event) {
+    setName(event.target.value);
   }
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <label htmlFor="">
-        Enter Your Name:
-        <input
-          onChange={handleChange}
-          type="text"
-          name="username"
-          value={input.username || ""}
-        />
-      </label>
-      <label htmlFor="">
-        Enter Your Age:
-        <input
-          onChange={handleChange}
-          type="number"
-          name="age"
-          value={input.age || ""}
-        />
-      </label>
-      <input type="submit" />
-    </form>
+    <>
+      <input type="text" value={name} onChange={handleChange} />
+      <p>Name: {name}</p>
+      <input type="number" value={name} onChange={handleChange} />
+      <p>Number: {quantity}</p>
+    </>
   );
 }
 
