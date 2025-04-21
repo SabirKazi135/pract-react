@@ -5,7 +5,9 @@ import "./App.css";
 
 function App() {
   const [car, setCar] = useState({ year: 2024, make: "ford", model: "Mustag" });
-  function handleYearChange(e) {}
+  function handleYearChange(e) {
+    setCar((c) => ({ ...c, year: e.target.value }));
+  }
   function handleMakeChange(e) {}
   function handleModelChange(e) {}
   return (
