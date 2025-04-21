@@ -7,10 +7,12 @@ function App() {
   const [count, setCount] = useState(0);
 
   function increment() {
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
   }
 
-  function decrement() {
-  }
+  function decrement() {}
 
   function reset() {
     setCount(0);
