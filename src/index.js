@@ -11,18 +11,23 @@ function App() {
     setFoods((f) => [...f, newFood]);
   }
 
-  function removeFood(e) {}
+  function removeFood(index) {
+    setFoods(foods.filter((_, i) => i !== index));
+  }
   return (
     <>
       <h2>List of Goods</h2>
       <ul>
         {foods.map((food, index) => {
-          return <li key={index}>{food}</li>;
+          return (
+            <li key={index} onClick={() => removeFood(index)}>
+              {food}
+            </li>
+          );
         })}
       </ul>
       <input type="text" id="foodinput" placeholder="Enter food name" />
       <button onClick={addFood}>Add Food</button>
-      <button onClick={removeFood}>Remove Food</button>
     </>
   );
 }
