@@ -38,8 +38,18 @@ function App() {
       <p>comment: {comment}</p>
       <select name="" id="" value={payment} onChange={handlePaymentChange}>
         <option value="">Select an option</option>
-        
+        <option value="rupay">rupay</option>
+        <option value="mastercard">mastercard</option>
+        <option value="rupe">visa</option>
       </select>
+      <p
+        style={{
+          display: "inline-block",
+          marginLeft: "10px",
+        }}
+      >
+        Payment: {payment}
+      </p>
     </>
   );
 }
