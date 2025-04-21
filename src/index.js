@@ -7,6 +7,7 @@ function App() {
   const [name, setName] = useState("Guest");
   const [quantity, setQuantity] = useState(10);
   const [comment, setComment] = useState("");
+  const [payment, setPayment] = useState("");
 
   function handleQuantityChange(event) {
     setQuantity(event.target.value);
@@ -16,6 +17,10 @@ function App() {
   }
   function handleCommentChange(event) {
     setComment(event.target.value);
+  }
+
+  function handlePaymentChange(event) {
+    setPayment(event.target.value);
   }
   return (
     <>
@@ -28,8 +33,13 @@ function App() {
         id=""
         value={comment}
         onChange={handleCommentChange}
+        placeholder="Enter Your Review"
       ></textarea>
       <p>comment: {comment}</p>
+      <select name="" id="" value={payment} onChange={handlePaymentChange}>
+        <option value="">Select an option</option>
+        
+      </select>
     </>
   );
 }
