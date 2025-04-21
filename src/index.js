@@ -4,6 +4,10 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [car, setCar] = useState({year: 2024,
+    make: "ford",
+    model: "Mustag"}
+  );
   return (
   );
 }
