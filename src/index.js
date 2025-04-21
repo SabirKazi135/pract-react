@@ -8,8 +8,12 @@ function App() {
   function handleYearChange(e) {
     setCar((c) => ({ ...c, year: e.target.value }));
   }
-  function handleMakeChange(e) {}
-  function handleModelChange(e) {}
+  function handleMakeChange(e) {
+    setCar((c) => ({ ...c, make: e.target.value }));
+  }
+  function handleModelChange(e) {
+    setCar((c) => ({ ...c, model: e.target.value }));
+  }
   return (
     <>
       <p>
