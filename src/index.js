@@ -5,7 +5,6 @@ import "./App.css";
 
 function App() {
   const [foods, setFoods] = useState(["Apple", "Orange", "Banana"]);
-
   function addFood(e) {}
 
   function removeFood(e) {}
@@ -18,6 +17,7 @@ function App() {
         })}
       </ul>
       <input type="text" id="foodinput" placeholder="Enter food name" />
+      <button onClick={addFood}>Add Food</button>
     </>
   );
 }
