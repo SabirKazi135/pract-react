@@ -14,6 +14,17 @@ function App() {
   function change(e) {
     const name = e.target.name;
     const value = e.target.value;
+    if (name === "name") {
+      setProfile((p) => ({ ...p, [name]: value }));
+    } else {
+      setProfile((p) => ({
+        ...p,
+        location: {
+          ...p.location,
+          city: value,
+        },
+      }));
+    }
   }
   return (
     <>
