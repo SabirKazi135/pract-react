@@ -4,13 +4,17 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  
+  const [formData, setFormData] = useState({ name: "", age: "" });
+
+  function changeInput(e) {
+    setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
+  }
   return (
     <>
-      <input type="text" value={inputText} onChange={changeInput} />
-      <p>Text: {}</p>
-      <input type="number" value={inputNumber} onChange={changeInput} />
-      <p>Number: {}</p>
+      <input type="text" name="name" onChange={changeInput} />
+      <p>User Name: {formData.name}</p>
+      <input type="number" name="age" onChange={changeInput} />
+      <p>Age: {formData.age}</p>
     </>
   );
 }
