@@ -120,3 +120,8 @@ li {
 button {
   color: white;
 }
+
+li.doneClick span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

@@ -5,13 +5,20 @@ import "./App.css";
 
 function App() {
   const [taskList, setTaskList] = useState(["sabir", "raees"]);
+  const [doneTask, setDoneTask] = useState(null);
   function addTask() {
     const newTask = document.getElementById("inputTask").value;
     setTaskList((t) => [...t, newTask]);
     document.getElementById("inputTask").value = "";
   }
 
-  function done(index) {}
+  function done(index) {
+    setDoneTask(index);
+  }
+
+  function down(params) {}
+  function up(params) {}
+  function taskDelete(params) {}
   return (
     <div id="con">
       <h2>My To-Do List</h2>
@@ -22,8 +29,11 @@ function App() {
       <ul id="taskBar">
         {taskList.map((task, index) => {
           return (
-            <li>
-              {task}
+            <li
+              className={`${doneTask === index ? "doneClick" : ""}`}
+              key={index}
+            >
+              <span>{task}</span>
               <div id="taskButton">
                 <button className="done" onClick={() => done(index)}>
                   Done
