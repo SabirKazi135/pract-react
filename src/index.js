@@ -18,6 +18,10 @@ function App() {
       })
     );
   }
+
+  function editFruit(i) {
+    const newName = prompt("New name of fruit");
+  }
   return (
     <>
       <h1>List of Fruits</h1>
@@ -34,7 +38,7 @@ function App() {
               >
                 {fruit}
               </li>
-              <button onClick={() => }>remove</button>
+              <button onClick={() => editFruit(index)}>edit</button>
               <br />
             </>
           );
