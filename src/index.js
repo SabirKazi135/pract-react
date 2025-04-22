@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(["sabir"]);
   function addTask() {
     const newTask = document.getElementById("inputTask").value;
 
@@ -14,7 +14,9 @@ function App() {
     <div id="con">
       <h2>My To-Do List</h2>
       <input type="text" placeholder="Add a new task..." id="inputTask" />{" "}
-      <button onClick={addTask}>Add</button>
+      <button onClick={addTask} id="addButton">
+        Add
+      </button>
       <div id="taskBar">
         {taskList.map((task, index) => {
           return (

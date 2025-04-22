@@ -8,7 +8,7 @@ body {
 }
 
 #con {
-  width: 450px;
+  width: max-content;
   padding: 32px;
   min-width: auto;
   background-color: #1e1e1e;
@@ -21,7 +21,7 @@ h2 {
   font-weight: 700;
   font-size: 32px;
   text-align: center;
-  color: #00ad85;
+  color: #00adb5;
   margin: 21px 0px 16px;
   box-sizing: border-box;
 }
@@ -41,4 +41,17 @@ input {
 }
 
 #addButton {
+  border: none;
+  text-align: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 0px 6px 6px 0px;
+  background-color: #00adb5;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#addButton:hover {
+  background-color: #019ca3;
 }
