@@ -12,7 +12,11 @@ function App() {
   }
 
   function removeFruit(i) {
-    fruits.filter();
+    setFruits((pf) =>
+      pf.filter((_, index) => {
+        return i !== index;
+      })
+    );
   }
   return (
     <>
