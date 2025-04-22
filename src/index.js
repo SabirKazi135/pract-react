@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [taskList, setTaskList] = useState(["sabir"]);
+  const [taskList, setTaskList] = useState(["sabir", "raees"]);
   function addTask() {
     const newTask = document.getElementById("inputTask").value;
 
@@ -17,19 +17,19 @@ function App() {
       <button onClick={addTask} id="addButton">
         Add
       </button>
-      <div id="taskBar">
+      <ul id="taskBar">
         {taskList.map((task, index) => {
           return (
-            <div>
+            <li>
               {task}
               <button>Done</button>
               <button>Down</button>
               <button>Up</button>
               <button>Delete</button>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

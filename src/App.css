@@ -55,3 +55,21 @@ input {
 #addButton:hover {
   background-color: #019ca3;
 }
+
+#taskBar {
+  list-style-type: none;
+  margin: 0px;
+  margin-top: 15px;
+  padding: 0px;
+}
+
+li {
+  text-align: left;
+  background-color: #2a2a2a;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
