@@ -24,9 +24,19 @@ function App() {
       <ul>
         {fruits.map((fruit, index) => {
           return (
-            <li key={index} onClick={() => removeFruit(index)}>
-              {fruit}
-            </li>
+            <>
+              <li
+                style={{
+                  display: "inline-block",
+                }}
+                key={index}
+                onClick={() => removeFruit(index)}
+              >
+                {fruit}
+              </li>
+              <button onClick={() => }>remove</button>
+              <br />
+            </>
           );
         })}
       </ul>
