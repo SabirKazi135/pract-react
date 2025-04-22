@@ -72,4 +72,51 @@ li {
   display: flex;
   box-sizing: border-box;
   border-radius: 6px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#taskButton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+#taskButton button {
+  border: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.delete {
+  background-color: #ff4b5c;
+}
+
+.delete:hover {
+  background-color: #e43e4d;
+}
+
+.done {
+  background-color: #4caf50;
+}
+
+.done:hover {
+  background-color: #3c9a41;
+}
+
+.move-up,
+.move-down {
+  background-color: #555;
+}
+
+.move-up:hover,
+.move-down:hover {
+  background-color: #777;
+}
+
+button {
+  color: white;
 }

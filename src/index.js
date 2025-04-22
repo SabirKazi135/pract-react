@@ -22,10 +22,12 @@ function App() {
           return (
             <li>
               {task}
-              <button>Done</button>
-              <button>Down</button>
-              <button>Up</button>
-              <button>Delete</button>
+              <div id="taskButton">
+                <button className="done">Done</button>
+                <button className="move-down">Down</button>
+                <button className="move-up">Up</button>
+                <button className="delete">Delete</button>
+              </div>
             </li>
           );
         })}
