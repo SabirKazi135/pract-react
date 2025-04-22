@@ -7,9 +7,11 @@ function App() {
   const [taskList, setTaskList] = useState(["sabir", "raees"]);
   function addTask() {
     const newTask = document.getElementById("inputTask").value;
-
+    setTaskList((t) => [...t, newTask]);
     document.getElementById("inputTask").value = "";
   }
+
+  function done(index) {}
   return (
     <div id="con">
       <h2>My To-Do List</h2>
@@ -23,10 +25,18 @@ function App() {
             <li>
               {task}
               <div id="taskButton">
-                <button className="done">Done</button>
-                <button className="move-down">Down</button>
-                <button className="move-up">Up</button>
-                <button className="delete">Delete</button>
+                <button className="done" onClick={() => done(index)}>
+                  Done
+                </button>
+                <button className="move-down" onClick={() => down(index)}>
+                  Down
+                </button>
+                <button className="move-up" onClick={() => up(index)}>
+                  Up
+                </button>
+                <button className="delete" onClick={() => taskDelete(index)}>
+                  Delete
+                </button>
               </div>
             </li>
           );
