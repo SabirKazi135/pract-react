@@ -18,7 +18,6 @@ function App() {
   }
 
   function removeCar(index) {}
-  
 
   function yearChange(event) {
     setCarYear(event.target.value);
