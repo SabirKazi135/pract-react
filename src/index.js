@@ -9,12 +9,52 @@ function App() {
   const [carMake, setCarMake] = useState("");
   const [carModel, setCarModel] = useState("");
 
-  function addCar() {}
+  function addCar() {
+    const newCar = { year: carYear, make: carMake, model: carModel };
+    setCars((c) => [...c, newCar]);
+  }
 
-  function removeCar() {}
+  function removeCar(index) {}
 
-  function yearChange() {}
-  return <></>;
+  function yearChange(event) {
+    setCarYear(event.target.value);
+  }
+  function makeChange(event) {
+    setCarMake(event.target.value);
+  }
+  function modelChange(event) {
+    setCarModel(event.target.value);
+  }
+
+  return (
+    <>
+      <h2>List of Car objects</h2>
+      <ul>
+        {cars.map((car, index) => (
+          <li key={index}>
+            {car.year}, {car.make}, {car.model}
+          </li>
+        ))}
+      </ul>
+      <input type="number" value={carYear} onChange={yearChange} />
+      <br />
+      <input
+        type="text"
+        value={carMake}
+        onChange={makeChange}
+        placeholder="Enter car maker"
+      />
+      <br />
+      <input
+        type="text"
+        value={carModel}
+        onChange={modelChange}
+        placeholder="Enter car model"
+      />
+      <br />
+      <button onClick={addCar}>Add Car</button>
+    </>
+  );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
