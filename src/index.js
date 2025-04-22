@@ -12,9 +12,13 @@ function App() {
   function addCar() {
     const newCar = { year: carYear, make: carMake, model: carModel };
     setCars((c) => [...c, newCar]);
+    setCarYear(new Date().getFullYear());
+    setCarMake("");
+    setCarModel("");
   }
 
   function removeCar(index) {}
+  
 
   function yearChange(event) {
     setCarYear(event.target.value);
@@ -31,7 +35,7 @@ function App() {
       <h2>List of Car objects</h2>
       <ul>
         {cars.map((car, index) => (
-          <li key={index}>
+          <li key={index} onClick={() => removeCar(index)}>
             {car.year}, {car.make}, {car.model}
           </li>
         ))}
