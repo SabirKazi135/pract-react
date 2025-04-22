@@ -10,12 +10,20 @@ function App() {
     setFruits((f) => [...f, newFruit]);
     document.getElementById("newFruit").value = "";
   }
+
+  function removeFruit(i) {
+    fruits.filter();
+  }
   return (
     <>
       <h1>List of Fruits</h1>
       <ul>
         {fruits.map((fruit, index) => {
-          return <li key={index}>{fruit}</li>;
+          return (
+            <li key={index} onClick={() => removeFruit(index)}>
+              {fruit}
+            </li>
+          );
         })}
       </ul>
       <input type="text" id="newFruit" />
