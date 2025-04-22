@@ -4,17 +4,16 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [formData, setFormData] = useState({ name: "", age: "" });
-
-  function changeInput(e) {
-    setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
+  const [count, setCount] = useState(0);
+  function increament() {
+    setCount((c) => c + 1);
+    setCount((c) => c + 1);
+    setCount((c) => c + 1);
   }
   return (
     <>
-      <input type="text" name="name" onChange={changeInput} />
-      <p>User Name: {formData.name}</p>
-      <input type="number" name="age" onChange={changeInput} />
-      <p>Age: {formData.age}</p>
+      <p>{count}</p>
+      <button onClick={increament}>increament</button>
     </>
   );
 }
