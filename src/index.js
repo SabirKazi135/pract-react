@@ -4,46 +4,24 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [profile, setProfile] = useState({
-    name: "Guest",
-    location: {
-      city: "Unknown",
-    },
-  });
-
-  function change(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    if (name === "name") {
-      setProfile((p) => ({ ...p, [name]: value }));
-    } else {
-      setProfile((p) => ({
-        ...p,
-        location: {
-          ...p.location,
-          city: value,
-        },
-      }));
-    }
+  const [fruits, setFruits] = useState(["Apple", "Orange", "banana"]);
+  function addFruit() {
+    const newFruit = document.getElementById("newFruit").value;
+    setFruits((f) => [...f, newFruit]);
+    document.getElementById("newFruit").value = "";
   }
   return (
     <>
-      <h2>
-        UserName: {profile.name}, <br />
-        CityNames:
-        <ul>{profile.location.city}</ul>
-      </h2>
-      <label>
-        Name:
-        <input type="text" name="name" onChange={change} />
-      </label>
-      <label>
-        Location:
-        <input type="text" name="location" onChange={change} />
-      </label>
+      <h1>List of Fruits</h1>
+      <ul>
+        {fruits.map((fruit, index) => {
+          return <li key={index}>{fruit}</li>;
+        })}
+      </ul>
+      <input type="text" id="newFruit" />
+      <button onClick={addFruit}>Add</button>
     </>
   );
 }
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
