@@ -21,6 +21,11 @@ function App() {
 
   function editFruit(i) {
     const newName = prompt("New name of fruit");
+    setFruits((f) => {
+      const copy = [...f];
+      copy[i] = newName;
+      return copy;
+    });
   }
   return (
     <>
