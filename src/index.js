@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const [taskList, setTaskList] = useState(["sabir", "raees"]);
-  const [doneTask, setDoneTask] = useState(null);
+  const [doneTask, setDoneTask] = useState([]);
   function addTask() {
     const newTask = document.getElementById("inputTask").value;
     setTaskList((t) => [...t, newTask]);
@@ -13,7 +13,9 @@ function App() {
   }
 
   function done(index) {
-    setDoneTask(index);
+    setDoneTask((c) =>
+      c.includes(index) ? c.filter((i) => i !== index) : [...c, index]
+    );
   }
 
   function down(params) {}
@@ -31,7 +33,7 @@ function App() {
         {taskList.map((task, index) => {
           return (
             <li
-              className={`${doneTask === index ? "doneClick" : ""}`}
+              className={`${doneTask.includes(index) ? "doneClick" : ""}`}
               key={index}
             >
               <span>{task}</span>
