@@ -16,6 +16,7 @@ function App() {
     setDoneTask((c) =>
       c.includes(index) ? c.filter((i) => i !== index) : [...c, index]
     );
+    console.log(doneTask);
   }
 
   function down(params) {}
