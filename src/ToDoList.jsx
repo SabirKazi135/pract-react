@@ -29,7 +29,9 @@ function ToDoList() {
           value={newTask}
           onChange={inputChange}
         />
-        <button className="add-button" onClick={addTask}></button>
+        <button className="add-button" onClick={addTask}>
+          Add
+        </button>
       </div>
 
       <ol>
