@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
 function ToDoList() {
-  const [taks, setTasks] = useState([]);
+  const [taks, setTasks] = useState([
+    "Eat Breakfast",
+    "Take a shower",
+    "Walk the Dog",
+  ]);
   const [newTask, setNewTask] = useState("");
 
   function inputChange(event) {
@@ -14,6 +18,7 @@ function ToDoList() {
 
   function moveTaskUp(index) {}
   function moveTaskDown(index) {}
+  function doneTask(index) {}
   return (
     <div className="TodoList">
       <h1>Do To List</h1>
@@ -24,7 +29,28 @@ function ToDoList() {
           value={newTask}
           onChange={inputChange}
         />
+        <button className="add-button" onClick={addTask}></button>
       </div>
+
+      <ol>
+        {taks.map((task, index) => (
+          <li key={index}>
+            <span className="text">{task}</span>
+            <button className="delete-button" onClick={() => deleteTask(index)}>
+              Delete
+            </button>
+            <button className="up-button" onClick={() => moveTaskUp(index)}>
+              Up
+            </button>
+            <button className="down-button" onClick={() => moveTaskDown(index)}>
+              Down
+            </button>
+            <button className="done-button" onClick={() => doneTask(index)}>
+              done
+            </button>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
