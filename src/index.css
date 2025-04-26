@@ -2,7 +2,6 @@
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 100px;
-  background-color: gray;
 }
 
 h1 {
@@ -17,8 +16,31 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
 .add-button {
   background-color: green;
+}
+
+.add-button:hover {
+  opacity: 90%;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.delete-button:hover {
+  opacity: 60%;
+}
+
+.up-button,
+.down-button {
+  background-color: blue;
+}
+
+.up-button:hover,
+.down-button:hover {
+  opacity: 70%;
 }
