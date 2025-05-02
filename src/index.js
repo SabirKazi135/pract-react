@@ -7,7 +7,10 @@ function App() {
   const [color, setColor] = useState("green");
 
   useEffect(() => {
-    document.title = `Count ${count}`;
+    document.title = `Count ${count} ${color}`;
+    return () => {
+      
+    };
   }, [count]);
 
   function addCount() {
