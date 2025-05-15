@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
+  const [show, setShow] = useState(true);
+  return (
+    <>
+      <button onClick={() => setShow((s) => !s)}>Toggle Component</button>
+      {show && <ResizeTracker />}
+    </>
+  );
+}
+
+function ResizeTracker() {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
 
