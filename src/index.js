@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { useState } from "react";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
@@ -8,30 +8,30 @@ function App() {
   const [height, setHeight] = useState(window.innerHeight);
 
   useEffect(() => {
-    window.addEventListener("resize", hadnleResize);
-    console.log("Evenet Listner Added");
+    window.addEventListener("resize", handleResize);
+    console.log("Event Listener Added");
+
     return () => {
-      window.removeEventListener("resize", hadnleResize);
-      console.log("Event removed");
+      window.removeEventListener("resize", handleResize);
+      console.log("Event Listener Removed");
     };
   }, []);
 
-  useEffect(
-    () => {
-      document.title = `Size: ${width} x ${height}`;
-    },
-    [width],
-    height
-  );
-  function hadnleResize() {
+  useEffect(() => {
+    document.title = `Size: ${width} x ${height}`;
+  }, [width, height]);
+
+  function handleResize() {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
   }
+
   return (
     <>
-      <p>Windows Width: {width}px</p>
-      <p>Windows Height: {height}px</p>
+      <p>Window Width: {width}px</p>
+      <p>Window Height: {height}px</p>
     </>
   );
 }
+
 root.render(<App />);
