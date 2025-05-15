@@ -17,6 +17,9 @@ function App() {
   function subtract() {
     setCount((c) => c - 1);
   }
+  function changeColor() {
+    setColor((c) => (c === "green" ? " red" : "green"));
+  }
 
   return (
     <>
@@ -27,7 +30,9 @@ function App() {
       <br />
       <button onClick={changeColor}>Change Color</button>
       <p>---------------------------</p>
-      <p>Title: {title}</p>
+      <p style={{ color: color }}>
+        Title: {title}, Color: {color}
+      </p>
     </>
   );
 }
