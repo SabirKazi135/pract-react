@@ -8,8 +8,8 @@ function App() {
   const [title, setTitle] = useState(0);
   const [color, setColor] = useState("green");
   useEffect(() => {
-    setTitle(count);
-  }, [count]);
+    setTitle(`${count}, Color: ${color}`);
+  }, [count, color]);
 
   function addCount() {
     setCount((c) => c + 1);
@@ -30,9 +30,7 @@ function App() {
       <br />
       <button onClick={changeColor}>Change Color</button>
       <p>---------------------------</p>
-      <p style={{ color: color }}>
-        Title: {title}, Color: {color}
-      </p>
+      <p style={{ color: color }}>Title: {title}</p>
     </>
   );
 }
