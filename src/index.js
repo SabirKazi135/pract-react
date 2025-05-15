@@ -4,10 +4,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
   const [name, setName] = useState("");
+  const [character, setCharacter] = useState(0);
 
-  useEffect(() => {
-    console.log(`Name Change Word is ${name}`);
-  }, [name]);
+function showCharacter() {
+  setCharacter()
+}
 
   function changeName(e) {
     setName(e.target.value);
@@ -16,6 +17,8 @@ function App() {
     <>
       <div>Name: {name}</div>
       <input type="text" value={name} onChange={(e) => changeName(e)} />
+      <p>Total Character: {character}</p>
+      <button onClick={showCharacter}>Show</button>
     </>
   );
 }
