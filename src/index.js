@@ -2,10 +2,16 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { useState } from "react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 function App() {
+  const [count, setCount] = useState(0);
+  function addCount() {
+    setCount(c => c + 1)
+  }
   return (
     <>
-      <h1>React Code</h1>
+      <p>Count: {count}</p>
+      <button onClick={addCount}>Add</button>
     </>
   );
 }
