@@ -5,8 +5,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = `Count ${count}`;
+  });
   function addCount() {
-    setCount(c => c + 1)
+    setCount((c) => c + 1);
   }
   return (
     <>
