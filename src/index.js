@@ -10,7 +10,19 @@ function App() {
   useEffect(() => {
     window.addEventListener("resize", hadnleResize);
     console.log("Evenet Listner Added");
+    return () => {
+      window.removeEventListener("resize", hadnleResize);
+      console.log("Event removed");
+    };
   }, []);
+
+  useEffect(
+    () => {
+      document.title = `Size: ${width} x ${height}`;
+    },
+    [width],
+    height
+  );
   function hadnleResize() {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
