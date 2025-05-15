@@ -3,15 +3,19 @@ import ReactDOM from "react-dom/client";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
-  const [count, setCount] = useState(0);
-  useEffect(() => {}, []);
-  function addCount() {
-    setCount((c) => c + 1);
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    console.log(`Name Change Word is ${name}`);
+  }, [name]);
+
+  function changeName(e) {
+    setName(e.target.value);
   }
   return (
     <>
-      <div>Count: {count}</div>
-      <button onClick={addCount}>Add</button>
+      <div>Name: {name}</div>
+      <input type="text" value={name} onChange={(e) => changeName(e)} />
     </>
   );
 }
