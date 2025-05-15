@@ -6,9 +6,9 @@ function App() {
   const [name, setName] = useState("");
   const [character, setCharacter] = useState(0);
 
-function showCharacter() {
-  setCharacter()
-}
+  useEffect(() => {
+    setCharacter(name.length);
+  }, [name]);
 
   function changeName(e) {
     setName(e.target.value);
@@ -18,7 +18,6 @@ function showCharacter() {
       <div>Name: {name}</div>
       <input type="text" value={name} onChange={(e) => changeName(e)} />
       <p>Total Character: {character}</p>
-      <button onClick={showCharacter}>Show</button>
     </>
   );
 }
