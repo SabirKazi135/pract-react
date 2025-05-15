@@ -8,7 +8,7 @@ function App() {
   const [title, setTitle] = useState(0);
   useEffect(() => {
     setTitle(count);
-  });
+  }, [count]);
 
   function addCount() {
     setCount((c) => c + 1);
