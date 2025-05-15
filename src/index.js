@@ -4,33 +4,21 @@ import { useState } from "react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [title, setTitle] = useState(0);
-  const [color, setColor] = useState("green");
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
   useEffect(() => {
-    setTitle(`${count}, Color: ${color}`);
-  }, [count, color]);
-
-  function addCount() {
-    setCount((c) => c + 1);
+    window.addEventListener("resize", hadnleResize);
+    console.log("Evenet Listner Added");
+  }, []);
+  function hadnleResize() {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
   }
-  function subtract() {
-    setCount((c) => c - 1);
-  }
-  function changeColor() {
-    setColor((c) => (c === "green" ? " red" : "green"));
-  }
-
   return (
     <>
-      <p>Count: {count}</p>
-      <button onClick={addCount}>Add</button>
-      <br />
-      <button onClick={subtract}>Subtract</button>
-      <br />
-      <button onClick={changeColor}>Change Color</button>
-      <p>---------------------------</p>
-      <p style={{ color: color }}>Title: {title}</p>
+      <p>Windows Width: {width}px</p>
+      <p>Windows Height: {height}px</p>
     </>
   );
 }
