@@ -1,12 +1,18 @@
 import ReactDOM from "react-dom/client";
-import { react, useState, useRef } from "react";
+import { react, useState, useRef, useEffect } from "react";
 
 function App() {
-  const [number, setNumber] = useState(0);
-
+  const ref = useRef(0);
+  useEffect(() => {
+    console.log("Component Render");
+  });
+  function handleClick() {
+    ref.current++;
+    console.log(ref.current);
+  }
   return (
     <div>
-      <button>Click Me</button>
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 }
