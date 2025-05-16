@@ -1,5 +1,7 @@
 import CB from "./CB";
-import react, { useState } from "react";
+import react, { useState, createContext } from "react";
+
+export const UserContext = createContext();
 
 function CA() {
   const [user, setUser] = useState("SabirKazi");
@@ -7,7 +9,9 @@ function CA() {
     <div className="box">
       <h1>Component A</h1>
       <h3>Hello: {user}</h3>
-      <CB />
+      <UserContext.Provider value={user}>
+        <CB />
+      </UserContext.Provider>
     </div>
   );
 }
