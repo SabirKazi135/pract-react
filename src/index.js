@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { react, useState, useRef, useEffect, createContext } from "react";
 import D from "./d";
+import C from "./c";
 export const UserContext = createContext();
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <UserContext.Provider value={userText}>
         <D />
       </UserContext.Provider>
+      <C />
     </div>
   );
 }
