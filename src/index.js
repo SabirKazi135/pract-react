@@ -16,8 +16,8 @@ function App() {
       <p>value: {userText}</p>
       <UserContext.Provider value={userText}>
         <D />
+        <C />
       </UserContext.Provider>
-      <C />
     </div>
   );
 }
