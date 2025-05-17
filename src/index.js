@@ -2,18 +2,15 @@ import ReactDOM from "react-dom/client";
 import { react, useState, useRef, useEffect } from "react";
 
 function App() {
-  const inputRef = useRef(null);
-  useEffect(() => {
-    console.log("Component Render");
-  });
-  function handleClick() {
-    inputRef.current.focus();
-    inputRef.current.style.backgroundColor = "yellow";
+  const [userText, setUserText] = useState(null);
+  function changeText(e) {
+    setUserText(e.target.value);
   }
+
   return (
     <div>
-      <button onClick={handleClick}>Click Me</button>
-      <input type="text" ref={inputRef} />
+      <input type="text" value={userText} onChange={(e) => changeText()} />
+      <p>value: {userText}</p>
     </div>
   );
 }
