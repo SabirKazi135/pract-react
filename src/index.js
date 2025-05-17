@@ -1,5 +1,7 @@
 import ReactDOM from "react-dom/client";
-import { react, useState, useRef, useEffect } from "react";
+import { react, useState, useRef, useEffect, createContext } from "react";
+import D from "./d";
+export const UserContext = createContext();
 
 function App() {
   const [userText, setUserText] = useState(null);
@@ -9,8 +11,11 @@ function App() {
 
   return (
     <div>
-      <input type="text" value={userText} onChange={(e) => changeText()} />
+      <input type="text" value={userText} onChange={changeText} />
       <p>value: {userText}</p>
+      <UserContext.Provider value={userText}>
+        <D />
+      </UserContext.Provider>
     </div>
   );
 }
