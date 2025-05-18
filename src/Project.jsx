@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Counter.css"; // 👈 Import the CSS
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -25,16 +26,16 @@ function Counter() {
   }
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
+    <div className="counter-container">
       <h1>Counter</h1>
-      <h2>{count}</h2>
+      <div className="display">{count}</div>
 
-      <div>
+      <div className="button-group">
         <button onClick={decrement}>-</button>
         <button onClick={increment}>+</button>
       </div>
 
-      <div style={{ marginTop: "10px" }}>
+      <div className="step-input">
         <label>
           Step:{" "}
           <input
@@ -46,11 +47,11 @@ function Counter() {
         </label>
       </div>
 
-      <button style={{ marginTop: "10px" }} onClick={reset}>
+      <button className="reset-btn" onClick={reset}>
         Reset
       </button>
 
-      <p style={{ marginTop: "10px", color: "gray" }}>
+      <p className="limits">
         Min: {minLimit} | Max: {maxLimit}
       </p>
     </div>
