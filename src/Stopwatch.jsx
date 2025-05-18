@@ -22,10 +22,10 @@ function StopWatch() {
     <div className="main1">
       <h2 className="head">Counter</h2>
       <p className="counter">{score}</p>
-      <button className="dicreament1" onClick={increament}>
+      <button className="dicreament1" onClick={dicreament}>
         -
       </button>
-      <button className="increament1" onClick={dicreament}>
+      <button className="increament1" onClick={increament}>
         +
       </button>
       <br />
