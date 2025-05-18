@@ -1,5 +1,4 @@
 import react, { useRef, useEffect, useState } from "react";
-import "./Counter.css";
 
 function StopWatch() {
   const [hour, setHours] = useState(0);
