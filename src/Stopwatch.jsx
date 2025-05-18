@@ -12,6 +12,10 @@ function StopWatch() {
       setSeconds(0);
       setMinutes((m) => m + 1);
     }
+    if (minutes >= 60) {
+      setMinutes(0);
+      setHours((m) => m + 1);
+    }
   }, [seconds]);
 
   function start() {
