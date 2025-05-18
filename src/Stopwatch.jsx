@@ -19,6 +19,9 @@ function StopWatch() {
   }, [seconds]);
 
   function start() {
+    if (startTime !== null) {
+      return;
+    }
     startTime.current = setInterval(() => {
       setSeconds((c) => c + 1);
     }, 10);
