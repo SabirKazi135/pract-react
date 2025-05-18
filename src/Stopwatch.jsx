@@ -12,12 +12,16 @@ function StopWatch() {
       setSeconds(0);
       setMinutes((m) => m + 1);
     }
+  }, [seconds]);
+
+  useEffect(() => {
     if (minutes >= 60) {
       setMinutes(0);
       setHours((m) => m + 1);
     }
-  }, [seconds]);
-
+  }, [minutes]);
+    
+    
   function start() {
     if (startTime.current !== null) {
       return;
@@ -28,11 +32,12 @@ function StopWatch() {
   }
 
   function stop() {
-      clearInterval(startTime.current);
-      
+    clearInterval(startTime.current);
+    startTime.current = null;
   }
 
   function reset() {
+    stop();
     setHours(0);
     setMinutes(0);
     setSeconds(0);
