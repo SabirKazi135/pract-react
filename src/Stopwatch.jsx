@@ -5,13 +5,30 @@ function StopWatch() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-    function start() {
-      
+  const startTime = useRef(null);
+
+  useEffect(() => {
+    if (seconds >= 100) {
+      setSeconds(0);
+      setMinutes((m) => m + 1);
+    }
+  }, [seconds]);
+
+  function start() {
+    startTime.current = setInterval(() => {
+      setSeconds((c) => c + 1);
+    }, 10);
   }
 
-  function stop() {}
+  function stop() {
+    clearInterval(startTime.current);
+  }
 
-  function reset() {}
+  function reset() {
+    setHours(0);
+    setMinutes(0);
+    setSeconds(0);
+  }
   return (
     <div className="main">
       <h1>Stopwatch</h1>
