@@ -1,15 +1,15 @@
 :root {
   --bg-color: #121212;
-  --container-bg: #1f1f1f;
-  --text-color: #e0e0e0;
-  --primary-color: #03dac6;
-  --accent-color: #bb86fc;
-  --button-bg: #2c2c2c;
-  --button-hover: #3c3c3c;
-  --reset-bg: #cf6679;
-  --reset-hover: #b00020;
-  --border-color: #333;
-  --subtle-text: #888;
+  --container-bg: #1e1e2f;
+  --text-color: #ffffff;
+  --primary-color: #00bcd4;
+  --accent-color: #ff4081;
+  --button-bg: #00bcd4;
+  --button-hover: #00acc1;
+  --reset-bg: #ffc107;
+  --reset-hover: #ffb300;
+  --border-color: #2c2c3e;
+  --subtle-text: #aaaaaa;
 }
 
 body {
@@ -21,25 +21,26 @@ body {
 }
 
 .counter-container {
-  max-width: 360px;
+  max-width: 400px;
   margin: 60px auto;
   padding: 30px 20px;
   background-color: var(--container-bg);
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 28px;
   margin-bottom: 20px;
   color: var(--primary-color);
+  letter-spacing: 1px;
 }
 
 .display {
-  font-size: 64px;
-  margin: 20px 0;
+  font-size: 70px;
+  margin: 30px 0;
   font-weight: bold;
   color: var(--accent-color);
 }
@@ -50,19 +51,21 @@ h1 {
 
 .button-group button {
   font-size: 28px;
-  width: 60px;
-  height: 60px;
-  margin: 0 10px;
+  width: 64px;
+  height: 64px;
+  margin: 0 12px;
   background-color: var(--button-bg);
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .button-group button:hover {
   background-color: var(--button-hover);
+  transform: translateY(-2px);
 }
 
 .step-input {
@@ -70,35 +73,36 @@ h1 {
 }
 
 .step-input input {
-  padding: 10px;
-  font-size: 16px;
-  width: 80px;
-  background-color: var(--bg-color);
+  padding: 12px;
+  font-size: 18px;
+  width: 100px;
+  background-color: #2a2a3d;
   color: var(--text-color);
-  border: 2px solid var(--accent-color);
-  border-radius: 6px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
   text-align: center;
 }
 
 .reset-btn {
-  margin-top: 20px;
-  padding: 10px 30px;
+  margin-top: 25px;
+  padding: 12px 32px;
   background-color: var(--reset-bg);
-  color: white;
-  font-weight: bold;
+  color: #000000;
+  font-weight: 600;
   font-size: 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .reset-btn:hover {
   background-color: var(--reset-hover);
+  transform: translateY(-2px);
 }
 
 .limits {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 18px;
+  font-size: 15px;
   color: var(--subtle-text);
 }
