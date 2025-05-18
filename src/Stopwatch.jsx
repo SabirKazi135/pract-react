@@ -7,14 +7,13 @@ function StopWatch() {
     setSteps(e.target.value);
   }
 
-    function increament() {
-      if (Number(score) <= 100) {
-        
-          setScore((s) => s + Number(steps));
-          if (score>=100) {
-            setScore(100)
-          }
+  function increament() {
+    if (Number(score) <= 100) {
+      setScore((s) => s + Number(steps));
+      if (score >= 100) {
+        setScore(100);
       }
+    }
   }
   function dicreament() {
     setScore((s) => s - Number(steps));
