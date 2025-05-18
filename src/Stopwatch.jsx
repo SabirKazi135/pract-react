@@ -1,5 +1,9 @@
 function StopWatch() {
-    return ();
+    return (
+        <div className="main">
+            
+        </div>
+    );
 }
 
 export default StopWatch;
