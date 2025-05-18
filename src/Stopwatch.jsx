@@ -19,7 +19,7 @@ function StopWatch() {
   }, [seconds]);
 
   function start() {
-    if (startTime !== null) {
+    if (startTime.current !== null) {
       return;
     }
     startTime.current = setInterval(() => {
@@ -28,7 +28,8 @@ function StopWatch() {
   }
 
   function stop() {
-    clearInterval(startTime.current);
+      clearInterval(startTime.current);
+      
   }
 
   function reset() {
