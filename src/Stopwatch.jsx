@@ -5,7 +5,9 @@ function StopWatch() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  function start() {}
+    function start() {
+      
+  }
 
   function stop() {}
 
@@ -14,7 +16,8 @@ function StopWatch() {
     <div className="main">
       <h1>Stopwatch</h1>
       <div>
-        {hour}:{minutes}:{seconds}
+        {String(hour).padStart(2, "0")}:{String(minutes).padStart(2, "0")}:
+        {String(seconds).padStart(2, "0")}
       </div>
       <button className="start" onClick={start}>
         Start
